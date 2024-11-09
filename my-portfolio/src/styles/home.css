@@ -1,0 +1,18 @@
+#about{
+    min-height: 100vh;
+    background-color: rgb(62, 16, 104);
+}
+
+#skills{
+    min-height: 100vh;
+}
+
+#projects{
+    min-height: 100vh;
+    background-color: rgb(62, 16, 104);
+}
+
+#contact{
+    min-height: 100vh;
+
+}
