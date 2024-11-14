@@ -1,7 +1,7 @@
 import { FC } from "react";
 import "../styles/footer.css";
 const Footer : FC = () =>(
-    <div className="footer">
+    <div className="footer bg-gray-800">
         Footer
     </div>
 )

@@ -1,42 +1,15 @@
 'use client';
-import { FC, useState, useEffect } from 'react';
+import { FC, useState } from 'react';
 import { Link } from 'react-scroll';
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
 
 const Navbar: FC = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const [activeSection, setActiveSection] = useState<string>('');
-  const sections = ['About', 'Skills', 'Projects', 'Contact'];
+  const sections: string[] = ['About', 'Skills', 'Projects', 'Contact'];
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
   };
-
-  // Function to track the scroll position and highlight active section
-  const handleScroll = () => {
-    const sections = document.querySelectorAll('section');
-    let currentSection = '';
-
-    // Loop through each section and check if it's in the viewport
-    sections.forEach((section) => {
-      const rect = section.getBoundingClientRect();
-      const isVisible = rect.top <= window.innerHeight / 2 && rect.bottom >= window.innerHeight / 2;
-      
-      if (isVisible) {
-        currentSection = section.id;
-      }
-    });
-
-    // Update the active section only if it changes
-    if (currentSection !== activeSection) {
-      setActiveSection(currentSection);
-    }
-  };
-
-  useEffect(() => {
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, [activeSection]); // Re-run useEffect when the active section changes
 
   return (
     <nav className="bg-gray-800 text-white fixed w-full z-10 top-0 left-0 shadow-lg">
@@ -51,9 +24,9 @@ const Navbar: FC = () => {
               to={item.toLowerCase()}
               smooth={true}
               duration={500}
-              spy={true}
-              activeClass="text-blue-500"  // Active section gets highlighted
-              className={`cursor-pointer text-lg ${activeSection === item.toLowerCase() ? 'text-blue-500' : 'text-white'} hover:text-gray-400`}
+              spy={true} // Enables scroll tracking
+              activeClass="text-blue-600 font-bold" // Adds active class on scroll
+              className="cursor-pointer text-lg text-white hover:text-gray-400"
             >
               {item}
             </Link>
@@ -82,10 +55,12 @@ const Navbar: FC = () => {
                 to={item.toLowerCase()}
                 smooth={true}
                 duration={500}
-                onClick={() => setIsOpen(false)}
-                spy={true}
-                activeClass="text-blue-500"  // Active section gets highlighted
-                className={`cursor-pointer ${activeSection === item.toLowerCase() ? 'text-blue-500' : 'text-white'} hover:text-gray-400`}
+                onClick={() => {
+                  setIsOpen(false);
+                }}
+                spy={true} // Enables scroll tracking on mobile as well
+                activeClass="text-blue-600 font-bold" // Adds active class on scroll
+                className="cursor-pointer text-white hover:text-gray-400"
               >
                 {item}
               </Link>
