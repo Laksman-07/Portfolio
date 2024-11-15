@@ -1,3 +1,8 @@
 .footer{
-    height: 3rem;
+    height: fit-content;
+}
+
+.footer-link{
+    width: 2.5rem;
+    height:2.5rem;
 }

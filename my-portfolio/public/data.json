@@ -1,0 +1,41 @@
+{
+    "projects": [
+      {
+        "id":1,
+        "name": "QKart",
+        "description": "A full-featured e-commerce application with user authentication and a shopping cart.",
+        "image": "/qkart.png",
+        "link": "https://laksman-qkart.netlify.app/"
+      },
+      {
+        "id":2,
+        "name": "QTrip",
+        "description": "A trip planner featuring the reservation for various adventure spots",
+        "image": "/qtrip.png",
+        "link": "https://laksman-qtrip-dynamic.netlify.app/"
+      }
+    ],
+    "skills": [
+      {
+        "name": "JavaScript",
+        "proficiency": 90
+      },
+      {
+        "name": "React",
+        "proficiency": 85
+      },
+      {
+        "name": "Next.js",
+        "proficiency": 80
+      },
+      {
+        "name": "TypeScript",
+        "proficiency": 75
+      },
+      {
+        "name": "Node.js",
+        "proficiency": 70
+      }
+    ]
+  }
+  

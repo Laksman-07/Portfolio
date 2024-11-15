@@ -24,8 +24,8 @@ const Navbar: FC = () => {
               to={item.toLowerCase()}
               smooth={true}
               duration={500}
-              spy={true} // Enables scroll tracking
-              activeClass="text-blue-600 font-bold" // Adds active class on scroll
+              spy={true} 
+              activeClass="text-blue-500 font-bold" 
               className="cursor-pointer text-lg text-white hover:text-gray-400"
             >
               {item}
@@ -59,7 +59,7 @@ const Navbar: FC = () => {
                   setIsOpen(false);
                 }}
                 spy={true} // Enables scroll tracking on mobile as well
-                activeClass="text-blue-600 font-bold" // Adds active class on scroll
+                activeClass="text-blue-500 font-bold" // Adds active class on scroll
                 className="cursor-pointer text-white hover:text-gray-400"
               >
                 {item}
