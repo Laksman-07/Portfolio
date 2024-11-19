@@ -3,6 +3,8 @@ import { FC, useEffect, useState } from 'react';
 import Image from 'next/image';
 import "../styles/home.css";
 import axios from 'axios';
+import { faEnvelope, faLocationArrow, faPhone } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 const Home: FC = () => {
   const [data, setData] = useState<Data>({
@@ -29,7 +31,7 @@ const Home: FC = () => {
   return(
   <>
     <div id='about' className='pt-16'>
-      <div className='title  text-xl text-center font-bold pt-8'>About Me</div>
+      <div className='title px-4 text-center font-bold text-3xl mb-6 pt-8'>About Me</div>
       <div className="flex flex-col md:flex-row items-center">
         <div className='image flex p-4 md:items-center justify-center basis-2/5'>
           <Image
@@ -61,7 +63,7 @@ const Home: FC = () => {
 
 
     <div id="projects" className="pt-16">
-  <div className="title px-4 text-xl text-center font-bold pt-8">Projects</div>
+  <div className="title px-4 text-center font-bold text-3xl mb-6 pt-8">Projects</div>
 
   <div className="flex flex-wrap justify-center gap-4"> 
     {data.projects.map((project) => (
@@ -91,13 +93,71 @@ const Home: FC = () => {
 
 
 
+<div id="contact" className="pt-16">
+  <h2 className="text-center font-bold text-3xl mb-8 pt-8">Contact Me</h2>
 
-
-
-
-    <div id="contact" className="pt-16">
-      <h1>Contact Section</h1>
+  <div className="flex flex-col md:flex-row items-stretch justify-center gap-8 px-6">
+    {/* Personal Info Section */}
+    <div className="personal-info w-full md:w-1/2 flex flex-col justify-center items-center text-lg space-y-4 rounded-lg p-6">
+      <div className="flex items-center space-x-4">
+        <FontAwesomeIcon icon={faPhone} className="text-blue-500" />
+        <span>+91-9884595403</span>
+      </div>
+      <div className="flex items-center space-x-4">
+        <FontAwesomeIcon icon={faEnvelope} className="text-blue-500" />
+        <span>laksmansubramani@gmail.com</span>
+      </div>
+      <div className="flex items-center space-x-4">
+        <FontAwesomeIcon icon={faLocationArrow} className="text-blue-500" />
+        <span>Chennai, Tamil Nadu</span>
+      </div>
     </div>
+
+    {/* Contact Form Section */}
+    <div className="form w-full md:w-1/2 rounded-lg p-8">
+      <form action="#" method="post" className="space-y-6">
+        <div>
+          <input
+            type="text"
+            id="name"
+            name="name"
+            placeholder="Name"
+            required
+            className="w-full bg-blue-950 px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+          />
+        </div>
+        <div>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            placeholder="Email"
+            required
+            className="w-full bg-blue-950 px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+          />
+        </div>
+        <div>
+          <textarea
+            id="message"
+            name="message"
+            rows={5}
+            placeholder="Enter your message"
+            required
+            className="w-full bg-blue-950 px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+          ></textarea>
+        </div>
+        <div>
+          <button
+            type="submit"
+            className="w-full bg-blue-500 text-white font-bold py-3 rounded-lg hover:bg-blue-600 transition duration-300"
+          >
+            Send Message
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
   </>
 );
 };
